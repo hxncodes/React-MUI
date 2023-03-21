@@ -5,12 +5,15 @@ import {
     Typography,
     Button,
     FormGroup,
+    FormLabel,
     FormControl,
     FormControlLabel,
     Checkbox,
     InputLabel,
     MenuItem,
-    Select
+    Select,
+    RadioGroup,
+    Radio
 } from '@mui/material'
 
 function Forms() {
@@ -19,11 +22,12 @@ function Forms() {
         email: "",
         password: "",
         subscribe: false,
-        age: 0
+        age: 10,
+        gender: ''
     })
 
 
-    // getting inputs from input fields
+    // getting values from form
     const handleChange = (e) => {
         setInputs((preValue) => ({
             ...preValue,
@@ -31,11 +35,12 @@ function Forms() {
         }))
     }
 
-    // submit button action
+    //performing submit action
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(inputs);
     }
+
     return (
         <>
             <Typography variant="h3" component="h1" color="secondary" sx={{ margin: 3 }}>Welcome to Forms</Typography>
@@ -86,6 +91,14 @@ function Forms() {
                             <MenuItem value={20}>Twenty</MenuItem>
                             <MenuItem value={30}>Thirty</MenuItem>
                         </Select>
+                    </FormControl>
+
+                    <FormControl>
+                        <FormLabel>Gender</FormLabel>
+                        <RadioGroup name="gender" value={inputs.gender} onChange={handleChange}>
+                            <FormControlLabel value='male' control={<Radio />} label='Male' />
+                            <FormControlLabel value='female' control={<Radio />} label='Female' />
+                        </RadioGroup>
                     </FormControl>
                     <Button sx={{ marginTop: 3 }} variant="contained" type="submit">Submit</Button>
 
