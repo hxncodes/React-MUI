@@ -1,17 +1,62 @@
 import React, { useState } from 'react'
-import { Box, TextField, Typography } from '@mui/material'
+import { Box, TextField, Typography, Button } from '@mui/material'
 
 function Forms() {
-    const [name, setName] = useState("")
+    const [inputs, setInputs] = useState({
+        name: "",
+        email: "",
+        password: ""
+    })
+
+
+    // getting inputs from input fields
+    const handleChange = (e) => {
+        setInputs((preValue) => ({
+            ...preValue,
+            [e.target.name]: e.target.value
+        }))
+    }
+
+    // submit button action
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(inputs);
+    }
     return (
         <>
             <Box component="div" sx={{ margin: 3 }}>
-                <Typography>Forms</Typography>
-                <TextField label="Outlined" variant="outlined" id="outlined-field" required type={'text'} placeholder='Name' value={name} onChange={(e) => setName(e.target.value)} />
-                <TextField label="Filled" variant="filled" id="filled-field" type={'email'} placeholder='Email' />
-                <TextField label="Standard" variant="standard" id="standard-field" type={'password'} placeholder='Password' />
+                <form onSubmit={handleSubmit}>
+                    <Typography>Forms</Typography>
+                    <TextField
+                        name="name"
+                        variant="outlined"
+                        type={'text'}
+                        placeholder='Name'
+                        value={inputs.name}
+                        onChange={handleChange}
+                    />
 
-                <Typography sx={{ margin: 3 }}>{name}</Typography>
+                    <TextField
+                        name="email"
+                        variant="outlined"
+                        type={'email'}
+                        placeholder='Email'
+                        value={inputs.email}
+                        onChange={handleChange}
+                    />
+
+                    <TextField
+                        name="password"
+                        variant="outlined"
+                        type={'password'}
+                        placeholder='Password'
+                        value={inputs.password}
+                        onChange={handleChange}
+                    />
+                    <br></br>
+                    <Button variant="contained" type="submit">Submit</Button>
+                </form>
+                <Typography sx={{ margin: 3 }}>Welcome</Typography>
             </Box>
 
         </>
