@@ -1,8 +1,11 @@
 import React from 'react'
+import TxtField from '../Pages/TxtField'
 
 function App() {
   return (
-    <div>App</div>
+    <>
+      <TxtField />
+    </>
   )
 }
 
