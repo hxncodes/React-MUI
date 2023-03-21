@@ -1,10 +1,10 @@
 import React from 'react'
-import TxtField from '../Pages/TxtField'
+import Forms from '../Pages/Forms'
 
 function App() {
   return (
     <>
-      <TxtField />
+      <Forms />
     </>
   )
 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Box, TextField, Typography } from '@mui/material'
 
-function TxtField() {
+function Forms() {
     const [name, setName] = useState("")
     return (
         <>
@@ -18,4 +18,4 @@ function TxtField() {
     )
 }
 
-export default TxtField
+export default Forms
