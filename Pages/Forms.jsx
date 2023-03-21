@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { Box, TextField, Typography, Button } from '@mui/material'
+import { Box, TextField, Typography, Button, FormGroup, FormControlLabel, Checkbox } from '@mui/material'
 
 function Forms() {
     const [inputs, setInputs] = useState({
         name: "",
         email: "",
-        password: ""
+        password: "",
+        subscribe: false
     })
 
 
@@ -24,8 +25,9 @@ function Forms() {
     }
     return (
         <>
+            <Typography variant="h3" component="h1" color="secondary" sx={{ margin: 3 }}>Welcome to Forms</Typography>
             <Box component="div" sx={{ margin: 3 }}>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column' }}>
                     <Typography>Forms</Typography>
                     <TextField
                         name="name"
@@ -53,10 +55,18 @@ function Forms() {
                         value={inputs.password}
                         onChange={handleChange}
                     />
-                    <br></br>
+
+                    <FormGroup>
+                        <FormControlLabel control={<Checkbox onChange={() => setInputs((prev) => ({
+                            ...prev,
+                            subscribe: !inputs.subscribe
+
+                        }))} />}
+                            label="Subscribe to Newsletter" />
+                    </FormGroup>
                     <Button variant="contained" type="submit">Submit</Button>
                 </form>
-                <Typography sx={{ margin: 3 }}>Welcome</Typography>
+
             </Box>
 
         </>
