@@ -1,8 +1,11 @@
 import React from 'react'
+import Typo from '../Pages/Typo'
 
 function App() {
   return (
-    <div>App</div>
+    <>
+      <Typo />
+    </>
   )
 }
 
