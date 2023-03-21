@@ -1,8 +1,11 @@
 import React from 'react'
+import Btns from '../Pages/Btns'
 
 function App() {
   return (
-    <div>App</div>
+    <>
+      <Btns />
+    </>
   )
 }
 
