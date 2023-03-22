@@ -6,18 +6,19 @@ function MyTabs() {
     const [value, setValue] = useState();
 
     return (
-        <div>
-            <Tabs
-                value={value}
-                onChange={(e, val) => setValue(val)}
-                indicatorColor='secondary'
-                textColor='secondary'
-            >
-                <Tab label="First Tab" />
-                <Tab label="Second Tab" />
-                <Tab label="Third Tab" />
-            </Tabs>
-        </div >
+        <AppBar>
+            <Toolbar>
+                <Tabs
+                    value={value}
+                    onChange={(e, val) => setValue(val)}
+                    textColor='inherit'
+                >
+                    <Tab label="First Tab" />
+                    <Tab label="Second Tab" />
+                    <Tab label="Third Tab" />
+                </Tabs>
+            </Toolbar>
+        </AppBar >
     )
 }
 
