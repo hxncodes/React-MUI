@@ -100,6 +100,7 @@ function Forms() {
                             <FormControlLabel value='female' control={<Radio />} label='Female' />
                         </RadioGroup>
                     </FormControl>
+
                     <Button sx={{ marginTop: 3 }} variant="contained" type="submit">Submit</Button>
 
                 </form>
