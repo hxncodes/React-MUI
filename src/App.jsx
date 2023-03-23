@@ -1,9 +1,10 @@
 import React from 'react'
+import SampleCard from '../components/SampleCard'
 
 function App() {
   return (
     <>
-      Master Branch
+      <SampleCard />
     </>
   )
 }
