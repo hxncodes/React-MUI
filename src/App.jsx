@@ -1,10 +1,10 @@
 import React from 'react'
-import MyModal from '../components/MyModal'
+import MyList from '../components/MyList'
 
 function App() {
   return (
     <>
-      <MyModal />
+      <MyList />
     </>
   )
 }
