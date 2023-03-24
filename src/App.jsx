@@ -1,10 +1,10 @@
 import React from 'react'
-import SampleCard from '../components/SampleCard'
+import MyDialog from '../components/MyDialog'
 
 function App() {
   return (
     <>
-      <SampleCard />
+      <MyDialog />
     </>
   )
 }
