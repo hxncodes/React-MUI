@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
+import { Typography } from "@mui/material";
 
 function App() {
   return (
     <>
-      Master Branch
+      <Typography variant="h3" color="secondary">
+        Welcome
+      </Typography>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
