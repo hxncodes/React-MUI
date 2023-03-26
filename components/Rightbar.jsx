@@ -4,6 +4,10 @@ import {
   Box,
   ImageList,
   ImageListItem,
+  List,
+  ListItem,
+  ListItemAvatar,
+  ListItemText,
   Typography,
 } from "@mui/material";
 import React from "react";
@@ -72,18 +76,52 @@ const galleryImages = [
     img: "/images/girl3.png",
   },
 ];
+const latestPosts = [
+  {
+    id: 0,
+    uid: "Alizee",
+    img: "/images/girl3.png",
+    message:
+      "lorem ipsum is a dumy text that is shown instead of actual text and will be replaced when actual text found.",
+  },
+  {
+    id: 1,
+    uid: "Maheen",
+    img: "/images/girl1.png",
+    message:
+      "lorem ipsum is a dumy text that is shown instead of actual text and will be replaced when actual text found.",
+  },
+  {
+    id: 2,
+    uid: "Wajid",
+    img: "/images/boy1.png",
+    message:
+      "lorem ipsum is a dumy text that is shown instead of actual text and will be replaced when actual text found.",
+  },
+];
 const Rightbar = () => {
   return (
-    <Box flex={2} p={2} sx={{ display: { xs: "none", sm: "block" } }}>
+    <Box
+      flex={2}
+      p={2}
+      sx={{
+        display: {
+          xs: "none",
+          sm: "block",
+        },
+      }}
+    >
       <Box position="fixed">
-        <Typography variant="h6" sx={{ fontWeight: 100 }}>
-          Online Friends
-        </Typography>
-        <AvatarGroup max="6">
-          {friends.map((friend) => (
-            <Avatar key={friend.id} alt={friend.name} src={friend.img} />
-          ))}
-        </AvatarGroup>
+        <Box sx={{ justifyContent: "center" }}>
+          <Typography variant="h6" sx={{ fontWeight: 100 }}>
+            Online Friends
+          </Typography>
+          <AvatarGroup max="6">
+            {friends.map((friend) => (
+              <Avatar key={friend.id} alt={friend.name} src={friend.img} />
+            ))}
+          </AvatarGroup>
+        </Box>
         <Typography variant="h6" mt={3} sx={{ fontWeight: 100 }}>
           Latest Photos
         </Typography>
@@ -104,6 +142,30 @@ const Rightbar = () => {
             />
           ))}
         </ImageListItem>
+        <Typography variant="h6" mt={3} sx={{ fontWeight: 100 }}>
+          Latest Conversations
+        </Typography>
+        <List sx={{ width: "100%", bgcolor: "background.paper" }}>
+          {latestPosts.map((latestPost) => (
+            <ListItem alignItems="flex-start">
+              <ListItemAvatar>
+                <Avatar alt={latestPost.uid} src={latestPost.img} />
+              </ListItemAvatar>
+              <ListItemText
+                primary={latestPost.uid}
+                secondary={
+                  <Typography
+                    component="span"
+                    variant="body2"
+                    color="text.primary"
+                  >
+                    {latestPost.message}
+                  </Typography>
+                }
+              />
+            </ListItem>
+          ))}
+        </List>
       </Box>
     </Box>
   );
