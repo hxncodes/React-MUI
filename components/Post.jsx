@@ -21,7 +21,7 @@ import {
 
 const Post = () => {
   return (
-    <Card sx={{margin:5}}>
+    <Card sx={{ margin: 5 }}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: "red" }} aria-label="first post">
