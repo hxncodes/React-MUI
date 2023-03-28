@@ -6,6 +6,7 @@ import Rightbar from "../components/Rightbar";
 import { Stack } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
 import { theme } from "./theme";
+import CreatePost from "../components/CreatePost";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Feed />
           <Rightbar />
         </Stack>
+        <CreatePost />
       </ThemeProvider>
     </>
   );

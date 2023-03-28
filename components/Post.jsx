@@ -25,7 +25,7 @@ const Post = () => {
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: "red" }} aria-label="first post">
-            R
+            W
           </Avatar>
         }
         action={
